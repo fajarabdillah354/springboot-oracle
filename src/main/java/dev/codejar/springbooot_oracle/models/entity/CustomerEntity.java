@@ -3,6 +3,7 @@ package dev.codejar.springbooot_oracle.models.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "customers")
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class CustomerEntity {
 
     @Id
