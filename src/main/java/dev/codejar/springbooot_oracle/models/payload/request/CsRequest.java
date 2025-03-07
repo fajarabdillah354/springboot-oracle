@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @Data
-public class CustomerRequest {
+public class CsRequest {
 
     @NotBlank(message = "id cannot be blank")
     private Long id;
