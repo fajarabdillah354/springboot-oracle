@@ -1,13 +1,15 @@
 package dev.codejar.springbooot_oracle.models.payload.request;
 
 import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
+@Data
 public class CustomerRequest {
 
-    @NotBlank(message = "customerId cannot be blank")
-    private String customerId;
+    @NotBlank(message = "id cannot be blank")
+    private Long id;
 
     @NotBlank(message = "name cannot be blank")
     private String name;
@@ -17,5 +19,8 @@ public class CustomerRequest {
 
     @NotBlank(message = "phone cannot be blank")
     private String phone;
+
+    @NotBlank(message = "please fill the status")
+    private String status;
 
 }
