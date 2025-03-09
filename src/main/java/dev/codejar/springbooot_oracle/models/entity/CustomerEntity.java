@@ -1,6 +1,7 @@
 package dev.codejar.springbooot_oracle.models.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -43,7 +44,15 @@ import java.util.Date;
                         @StoredProcedureParameter(mode = ParameterMode.IN, name = "p_customer_id", type = Long.class),
                         @StoredProcedureParameter(mode = ParameterMode.IN, name = "p_date", type = Date.class)
                 }
-        )
+        ),
+//        @NamedStoredProcedureQuery(
+//                name = "Customer.level",
+//                procedureName = "CUSTOMER_PKG.GET_CUSTOMER_LEVEL",
+//                parameters = {
+//                        @StoredProcedureParameter(mode = ParameterMode.IN, name = "p_customer_id", type = Long.class),
+//                        @StoredProcedureParameter(mode = ParameterMode.OUT, name = "RETURN_VALUE", type = String.class)
+//                }
+//        )
 })
 public class CustomerEntity {
 
@@ -67,6 +76,7 @@ public class CustomerEntity {
     private String status;
 
     @Column(name = "birth_date")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime birthDate;
 
     @Column(name = "created_date")
