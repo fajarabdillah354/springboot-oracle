@@ -8,8 +8,6 @@ import lombok.NoArgsConstructor;
 @Data
 public class CsRequest {
 
-    @NotBlank(message = "id cannot be blank")
-    private Long id;
 
     @NotBlank(message = "name cannot be blank")
     private String name;
