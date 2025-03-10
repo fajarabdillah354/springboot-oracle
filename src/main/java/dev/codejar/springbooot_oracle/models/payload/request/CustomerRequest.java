@@ -1,12 +1,16 @@
 package dev.codejar.springbooot_oracle.models.payload.request;
 
 import jakarta.validation.constraints.NotBlank;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
+import java.time.LocalDateTime;
+
+
 @Data
-public class CsRequest {
+@Builder
+public class CustomerRequest {
 
 
     @NotBlank(message = "name cannot be blank")
@@ -20,5 +24,7 @@ public class CsRequest {
 
     @NotBlank(message = "please fill the status")
     private String status;
+
+    private LocalDateTime birthDate;
 
 }
